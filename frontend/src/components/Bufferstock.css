@@ -1,0 +1,336 @@
+/* General Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+
+h1, h2 {
+    color: #4CAF50;
+    font-family: 'Segoe UI', sans-serif;
+    margin: 20px 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Header Styling */
+header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+header h1 {
+    font-size: 2.5rem;
+}
+
+/* Date Styling */
+#date-heading {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #555;
+}
+
+/* Search Input Styling */
+input[type="search"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    font-size: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+input[type="search"]:focus {
+    outline: none;
+    border-color: #4CAF50;
+    box-shadow: 0 0 5px rgba(76, 175, 80, 0.2);
+}
+
+/* Table Styling */
+.special-table-container {
+    margin-top: 30px;
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 30px;
+}
+
+th, td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: #f1f1f1;
+    color: #4CAF50;
+    font-size: 1rem;
+}
+
+td {
+    font-size: 0.95rem;
+    color: #555;
+}
+
+/* Notification Styling */
+.notification {
+    color: red;
+    font-weight: bold;
+}
+
+.notification.success {
+    color: green;
+}
+
+.notification.error {
+    color: orange;
+}
+
+/* Hover Effects */
+table tr:hover {
+    background-color: #f5f5f5;
+}
+
+table td, table th {
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+table tr:hover td {
+    background-color: #e7f7e7;
+}
+
+input[type="search"]:focus + table tr:hover td {
+    background-color: #e7f7e7;
+}
+
+/* Footer Styling */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #f1f1f1;
+    margin-top: 40px;
+    border-radius: 8px;
+}
+
+footer p {
+    color: #888;
+    font-size: 0.9rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        padding: 10px;
+    }
+
+    header h1 {
+        font-size: 2rem;
+    }
+
+    #date-heading {
+        font-size: 1rem;
+    }
+
+    input[type="search"] {
+        font-size: 1rem;
+    }
+
+    table {
+        width: 100%;
+        margin-top: 15px;
+    }
+
+    th, td {
+        font-size: 0.9rem;
+        padding: 10px;
+    }
+}
+
+/* Modal Price Styling */
+.modal-price {
+    background-color: #e2f7d6;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-weight: bold;
+}
+
+.stock-intervention {
+    background-color: #ffeb3b;
+    padding: 5px 10px;
+    font-weight: bold;
+}
+
+.success-message {
+    color: #28a745;
+}
+
+/* Styling for Error Notifications */
+.error-message {
+    color: red;
+    font-weight: bold;
+    background-color: #ffcccc;
+    padding: 8px;
+    border-radius: 4px;
+    text-align: center;
+}
+
+/* Table Scroll */
+table {
+    table-layout: auto;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+@media (max-width: 500px) {
+    table th, table td {
+        padding: 8px;
+    }
+}
+
+/* Custom Hover for Table Rows */
+table tr:hover {
+    cursor: pointer;
+    background-color: #f1f1f1;
+}
+
+/* Active State for Search Input */
+input[type="search"]:active {
+    background-color: #f9f9f9;
+}
+
+/* Mobile View Styles */
+@media (max-width: 400px) {
+    .container {
+        margin: 0 10px;
+    }
+
+    header h1 {
+        font-size: 1.8rem;
+    }
+
+    #date-heading {
+        font-size: 0.9rem;
+    }
+
+    table {
+        font-size: 0.8rem;
+    }
+
+    input[type="search"] {
+        font-size: 1rem;
+    }
+
+    table th, table td {
+        padding: 8px;
+    }
+
+    footer p {
+        font-size: 0.8rem;
+    }
+}
+
+/* Added Transition for Interactions */
+input[type="search"], table td, table th {
+    transition: all 0.3s ease;
+}
+
+/* Styled Pop-up Hover Effects */
+.notification:hover {
+    background-color: #ddd;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    input[type="search"]:focus {
+        background-color: #fff;
+    }
+
+    footer {
+        font-size: 0.8rem;
+    }
+}
+
+/* Optimized Grid Layout */
+@media (max-width: 1000px) {
+    .container {
+        padding: 20px;
+    }
+}
+
+/* Styling for Table Rows with No Notification */
+.table-row-no-notification {
+    background-color: #f9f9f9;
+    color: #5f6368;
+}
+
+/* Table Row for Notification */
+.table-row-with-notification {
+    background-color: #ffecb3;
+    color: red;
+}
+
+.table-row-with-intervention {
+    background-color: #ffcccb;
+}
+
+/* Styling for Table Sorting */
+table th.sortable {
+    cursor: pointer;
+    position: relative;
+}
+
+table th.sortable:after {
+    content: "🔽";
+    position: absolute;
+    right: 10px;
+}
+
+table th.sortable.sorted-asc:after {
+    content: "🔼";
+}
+
+table th.sortable.sorted-desc:after {
+    content: "🔽";
+}
+
+/* Sticky Header on Scroll */
+table thead {
+    position: sticky;
+    top: 0;
+    background-color: #fff;
+    z-index: 1;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+table tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+/* Table Responsive Styles */
+@media (max-width: 768px) {
+    .special-table-container {
+        overflow-x: auto;
+    }
+}
+

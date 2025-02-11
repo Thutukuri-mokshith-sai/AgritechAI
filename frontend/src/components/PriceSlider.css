@@ -1,0 +1,141 @@
+.price-container {
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    width: 100%;
+    max-width: 100%;
+    background: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    overflow: hidden; /* Hide the overflow to create the scrolling effect */
+    position: relative;
+  }
+  /* Default Light Mode */
+body {
+  background-color: white;
+  color: black;
+}
+
+.price-container {
+  padding: 20px;
+  background-color: #f8f9fa;
+}
+
+.commodity-container {
+  margin-top: 20px;
+  padding: 10px;
+  background-color: #ffffff;
+}
+
+.commodity {
+  font-size: 18px;
+}
+
+.price, .max, .min {
+  margin-right: 10px;
+}
+
+/* Dark Mode Styles */
+body.dark-mode {
+  background-color: #121212;
+  color: white;
+}
+
+body.dark-mode .price-container {
+  background-color: #333333;
+}
+
+body.dark-mode .commodity-container {
+  background-color: #1e1e1e;
+}
+
+body.dark-mode .commodity {
+  color: white;
+}
+
+body.dark-mode .btn-toggle {
+  background-color: #6c757d;
+  color: white;
+}
+
+body.dark-mode .btn-toggle:hover {
+  background-color: #5a6268;
+}
+
+/* Button Styles */
+.btn-toggle {
+  margin-top: 20px;
+  padding: 8px 16px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+  h2 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  .commodity-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    animation: roll 5s linear infinite; /* Animation for scrolling */
+  }
+  
+  .commodity {
+    font-size: 20px;
+    color: #333;
+    opacity: 0;
+    transform: translateX(100%);
+    animation: slideIn 1s ease-out forwards;
+    display: inline-block;
+  }
+  
+  .price {
+    color: #555;
+    margin-right: 10px;
+  }
+  
+  .max {
+    color: blue;
+    margin-right: 10px;
+  }
+  
+  .min {
+    color: red;
+    margin-right: 10px;
+  }
+  
+  /* Define the rolling animation from right to left */
+  @keyframes roll {
+    0% {
+      transform: translateX(100%);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+  
+  /* Define the slide-in animation for each commodity */
+  @keyframes slideIn {
+    0% {
+      opacity: 0;
+      transform: translateX(100%);
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  
+  /* Interactive effect on hover */
+  .commodity:hover {
+    color: #007BFF;
+    cursor: pointer;
+    transform: translateX(0);
+    transition: transform 0.3s ease, color 0.3s ease;
+  }
+  

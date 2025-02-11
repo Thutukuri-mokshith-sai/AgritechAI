@@ -1,0 +1,8 @@
+/* CSS for showing and hiding the nav links */
+.tab-container.show {
+    display: flex;
+}
+
+.tab-container.hide {
+    display: none;
+}

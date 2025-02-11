@@ -1,0 +1,386 @@
+/* General Footer Styles */
+.footer {
+  background-color: #f4f7fc; 
+  color: #2c3e50; 
+  padding: 40px 20px;
+  font-family: 'Arial', sans-serif;
+  text-align: center;
+  border-top: 4px solid #bdc3c7; 
+  position: relative;
+  overflow: hidden; 
+}
+
+.footer .container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+.column {
+  flex: 1;
+  margin: 10px;
+  min-width: 220px;
+  padding: 20px;
+  box-sizing: border-box;
+  background-color: #ecf0f1; 
+  border-radius: 8px;
+  transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+  border: 2px solid #3498db; 
+}
+
+.column:hover {
+  transform: scale(1.05);
+  background-color: #fff; 
+  border-color: #2980b9; 
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15); /* Enhanced shadow on hover */
+}
+
+.column h3 {
+  font-size: 20px;
+  text-transform: uppercase;
+  cursor: pointer;
+  margin-bottom: 15px;
+  padding: 10px;
+  background-color: #3498db; 
+  color: #fff;
+  font-weight: 600;
+  border-radius: 6px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.column h3:hover {
+  background-color: #2980b9; 
+  transform: translateY(-5px); /* Adds lift effect */
+}
+
+.column ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.column ul li {
+  padding: 8px;
+  font-size: 16px;
+  color: #2c3e50; 
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.column ul li:hover {
+  color: #16a085; 
+  transform: translateX(5px); /* Slide effect on hover */
+}
+
+.dropdown-content {
+  display: none;
+  margin-top: 10px;
+  padding-left: 20px;
+  animation: fadeIn 0.4s ease-out;
+}
+
+.dropdown-content.show {
+  display: block;
+}
+
+.dropdown-icon {
+  font-size: 18px;
+  margin-left: 10px;
+  transition: transform 0.3s ease;
+}
+
+.column h3:hover .dropdown-icon {
+  transform: rotate(180deg);
+}
+
+/* Contact Section */
+.contact-section {
+  background-color: #ecf0f1; 
+  padding: 30px;
+  margin-top: 40px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  animation: fadeIn 0.6s ease-out;
+}
+
+.contact-info {
+  margin-bottom: 20px;
+}
+
+.contact-info p {
+  font-size: 16px;
+  margin: 5px 0;
+  color: #2c3e50; 
+}
+
+.contact-info p strong {
+  font-weight: 700;
+  color: #2980b9; 
+}
+
+.social-media {
+  margin-top: 20px;
+}
+
+.social-media a {
+  margin: 0 15px;
+  font-size: 22px;
+  color: #2c3e50; 
+  text-decoration: none;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.social-media a:hover {
+  color: #16a085; 
+  transform: scale(1.1); /* Slight zoom effect */
+}
+
+.social-media a[aria-label="Twitter"] {
+  color: #1DA1F2;
+}
+
+.social-media a[aria-label="Facebook"] {
+  color: #1877F2;
+}
+
+.social-media a[aria-label="LinkedIn"] {
+  color: #0077B5;
+}
+
+.social-media i {
+  margin-right: 10px;
+}
+
+.social-media a:hover i {
+  transform: translateX(5px);
+}
+
+/* Upgrade Section */
+.upgrade-section {
+  background-color: #3498db; 
+  padding: 30px;
+  margin-top: 30px;
+  text-align: center;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  animation: fadeIn 0.6s ease-out;
+}
+
+.upgrade-section p {
+  font-size: 18px;
+  color: #ecf0f1; 
+  margin-bottom: 20px;
+}
+
+.upgrade-button {
+  background-color: #2980b9; 
+  padding: 15px 30px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.upgrade-button:hover {
+  background-color: #16a085; 
+  transform: translateY(-5px);
+}
+
+.upgrade-button:active {
+  transform: translateY(2px);
+}
+
+.upgrade-button:focus {
+  outline: none;
+}
+
+/* Copyright Section */
+.copyright {
+  margin-top: 50px;
+  font-size: 14px;
+  color: #bdc3c7; 
+  text-align: center;
+}
+
+.copyright p {
+  margin: 10px 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .footer .container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .column {
+    min-width: 100%;
+    margin-bottom: 30px;
+  }
+
+  .column h3 {
+    font-size: 18px;
+  }
+
+  .social-media a {
+    font-size: 20px;
+  }
+
+  .contact-info p {
+    font-size: 14px;
+  }
+
+  .footer {
+    padding: 20px 10px;
+  }
+
+  .upgrade-section {
+    padding: 20px;
+  }
+
+  .copyright {
+    font-size: 12px;
+  }
+}
+
+/* Hover Effects */
+.column:hover {
+  background-color: #fff; 
+}
+
+.column h3:hover {
+  color: #fff;
+  background-color: #2980b9; 
+}
+
+.column ul li:hover {
+  color: #16a085; 
+}
+
+/* Smooth Scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Box Shadow Effects */
+.column,
+.upgrade-section,
+.contact-section {
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+.column:hover,
+.upgrade-section:hover,
+.contact-section:hover {
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Text Animation */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.column,
+.contact-section,
+.upgrade-section {
+  animation: fadeIn 0.6s ease-out;
+}
+
+/* Dropdown Animations */
+.dropdown-content {
+  animation: fadeIn 0.4s ease-out;
+}
+
+.dropdown-content.show {
+  animation: fadeIn 0.4s ease-out;
+}
+
+/* Footer Section Styles */
+.footer .container {
+  padding-bottom: 40px;
+}
+
+.column ul li {
+  transition: color 0.3s ease-in-out;
+}
+
+.column h3 {
+  position: relative;
+  font-weight: 600;
+}
+
+.column h3 span {
+  position: absolute;
+  right: 20px;
+  font-size: 22px;
+  transition: transform 0.3s ease;
+}
+
+.column h3:hover span {
+  transform: rotate(180deg);
+}
+
+.footer .container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 30px;
+}
+
+.column ul {
+  list-style: none;
+  padding-left: 20px;
+}
+
+.column ul li {
+  margin: 8px 0;
+  font-size: 16px;
+}
+
+.column h3:hover {
+  color: #fff;
+  background-color: #2980b9; 
+}
+
+footer {
+  background-color: #f4f7fc;
+  padding: 40px 20px;
+}
+
+footer a {
+  color: #bdc3c7;
+}
+
+footer a:hover {
+  color: #fff;
+}
+
+/* Button Hover Effects */
+.upgrade-button {
+  background-color: #2980b9; 
+  color: #fff;
+  padding: 15px 30px;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+}
+
+.upgrade-button:hover {
+  background-color: #16a085; 
+  transform: scale(1.05); /* Slight zoom effect */
+} 

@@ -1,0 +1,245 @@
+/* Global Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f5f5f5;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Container for the prices table */
+.prices-container {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    animation: fadeIn 1s ease-out;
+}
+
+/* Header Styles */
+h1 {
+    font-size: 30px;
+    text-align: center;
+    margin-bottom: 20px;
+    font-weight: 700;
+    color: #e74c3c;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#currentDate {
+    font-weight: bold;
+    color: #1abc9c;
+    font-size: 24px;
+    margin-top: 10px;
+}
+
+/* Input field for filtering */
+.filter-input {
+    display: block;
+    width: 100%;
+    padding: 14px;
+    margin-bottom: 20px;
+    font-size: 18px;
+    border: 2px solid #3498db;
+    border-radius: 6px;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.filter-input:focus {
+    border-color: #1abc9c;
+    outline: none;
+    box-shadow: 0 0 8px rgba(26, 188, 156, 0.4);
+}
+
+/* Table Styles */
+.price-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    transition: transform 0.3s ease;
+}
+
+.price-table th,
+.price-table td {
+    padding: 14px;
+    text-align: center;
+    border: 1px solid #ecf0f1;
+}
+
+.price-table th {
+    background-color: #f39c12;
+    color: white;
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.price-table td {
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+/* Hover Effects on Table Rows */
+.price-table tr:hover {
+    background-color: #f0c674;
+    cursor: pointer;
+    transform: scale(1.02);
+}
+
+.price-table td:hover {
+    background-color: #f39c12;
+    color: white;
+}
+
+/* Animations for Table Content */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Table Row Styling */
+.price-table tr:nth-child(odd) {
+    background-color: #f9f9f9;
+}
+
+.price-table tr:nth-child(even) {
+    background-color: #ffffff;
+}
+
+/* Adding focus effect on table rows */
+.price-table tr:focus-within {
+    background-color: #ffeb3b;
+}
+
+/* Responsive Styles for Mobile */
+@media (max-width: 768px) {
+    .prices-container {
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 24px;
+        margin-bottom: 15px;
+    }
+
+    #currentDate {
+        font-size: 18px;
+    }
+
+    .filter-input {
+        font-size: 16px;
+        padding: 10px;
+    }
+
+    .price-table th, .price-table td {
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    .price-table {
+        font-size: 14px;
+    }
+}
+
+/* Adding Button Style for Actions (e.g., Refresh) */
+.refresh-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    color: white;
+    background-color: #e74c3c;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.refresh-button:hover {
+    background-color: #c0392b;
+    transform: scale(1.05);
+}
+
+.refresh-button:focus {
+    outline: none;
+}
+
+/* Tooltip on hover for Price Information */
+.price-tooltip {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    color: #8e44ad;
+}
+
+.price-tooltip .tooltip-text {
+    visibility: hidden;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    border-radius: 4px;
+    padding: 5px;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -60px;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.price-tooltip:hover .tooltip-text {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* Adding Zebra Stripes and Hover on Prices */
+.price-table td {
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.price-table tr:nth-child(odd) td {
+    background-color: #fafafa;
+}
+
+.price-table tr:nth-child(even) td {
+    background-color: #fff;
+}
+
+.price-table td:hover {
+    background-color: #9b59b6;
+    color: white;
+}
+
+/* Active Filter Animation */
+.filter-input:valid {
+    border-color: #8e44ad;
+    box-shadow: 0 0 5px rgba(142, 68, 173, 0.5);
+}
+
+/* Adding a subtle shadow for the whole page */
+body {
+    background-color: #ecf0f1;
+    box-shadow: inset 0 0 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Section transitions for smooth scrolling */
+.prices-container {
+    transition: transform 0.3s ease-in-out;
+}
+
+.prices-container:hover {
+    transform: translateY(-5px);
+}
+
+/* Fade In for Page Load */
+.prices-container {
+    animation: fadeIn 2s ease-out;
+}

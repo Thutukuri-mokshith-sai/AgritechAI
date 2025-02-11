@@ -1,0 +1,427 @@
+/* Reset some default styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f4f4f4;
+  color: #333;
+  line-height: 1.6;
+  padding: 20px;
+  animation: fadeInBody 1.5s ease-in-out;
+}
+
+/* Fade-in effect for body */
+@keyframes fadeInBody {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Container animation */
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  transition: all 0.3s ease-in-out;
+  opacity: 0;
+  animation: fadeInContainer 2s ease-in-out forwards;
+}
+
+/* Fade-in effect for container */
+@keyframes fadeInContainer {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Form animation */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-bottom: 30px;
+  transition: transform 0.3s ease-in-out;
+  opacity: 0;
+  animation: slideInFromLeft 1s ease-out forwards;
+}
+
+/* Slide-in effect for form */
+@keyframes slideInFromLeft {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+label {
+  font-size: 1.2em;
+  color: #555;
+  animation: bounce 2s ease infinite;
+}
+
+/* Bounce animation for label */
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+input[type="text"], input[type="email"], input[type="number"] {
+  padding: 10px;
+  font-size: 1em;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  outline: none;
+  transition: all 0.3s ease-in-out;
+  opacity: 0;
+  animation: fadeInInputs 1s ease-out forwards;
+}
+
+/* Fade-in effect for inputs */
+@keyframes fadeInInputs {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+input[type="text"]:focus, input[type="email"]:focus, input[type="number"]:focus {
+  border-color: #4CAF50;
+  transform: scale(1.05);
+}
+
+button[type="submit"] {
+  padding: 12px;
+  font-size: 1.2em;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+  animation: pulse 1.5s infinite;
+}
+
+/* Pulse animation for the submit button */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+button[type="submit"]:hover {
+  background-color: #45a049;
+}
+
+/* User Card Styles */
+.user-card {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  margin: 15px 0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+  opacity: 0;
+  animation: fadeInCard 1s ease-out forwards;
+}
+
+/* Fade-in effect for user card */
+@keyframes fadeInCard {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.user-card:hover {
+  transform: scale(1.02);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  background-color: #e8f5e9;
+}
+
+.user-card .user-info {
+  font-size: 1.1em;
+  color: #333;
+  transition: color 0.3s ease;
+}
+
+.user-card:hover .user-info {
+  color: #388e3c;
+}
+
+.user-card .user-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.user-card a {
+  color: #e53935;
+  font-size: 1.1em;
+  text-decoration: none;
+  transition: color 0.3s ease, transform 0.2s ease;
+  opacity: 0;
+  animation: fadeInLinks 1s ease-out forwards;
+}
+
+/* Fade-in effect for links */
+@keyframes fadeInLinks {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.user-card a:hover {
+  color: #d32f2f;
+  transform: scale(1.1);
+}
+
+.user-card button {
+  padding: 8px 16px;
+  background-color: #2196F3;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.user-card button:hover {
+  background-color: #1976D2;
+}
+
+.delete-tooltip {
+  visibility: hidden;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 110%;
+  transform: translateY(-50%);
+  background-color: #333;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 0.9em;
+  transition: visibility 0.3s, opacity 0.3s, transform 0.3s ease;
+}
+
+.user-card:hover .delete-tooltip {
+  visibility: visible;
+  opacity: 1;
+  transform: translateY(-50%) scale(1.1);
+}
+
+.user-card {
+  width: 300px;
+  background-color: #f7f7f7;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin: 20px;
+  cursor: pointer;
+}
+
+.user-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+.user-card:nth-child(odd) {
+  background-color: #e0f7fa;
+}
+
+.user-card:nth-child(even) {
+  background-color: #f3e5f5;
+}
+
+.user-info {
+  font-family: Arial, sans-serif;
+  color: #333;
+}
+
+.user-info strong {
+  font-size: 1.2em;
+  color: #00796b;
+}
+
+.user-info span {
+  display: block;
+  font-size: 1em;
+  color: #555;
+  margin: 5px 0;
+}
+
+.user-info a {
+  color: #00796b;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.user-info a:hover {
+  color: #004d40;
+}
+
+/* Button Styles */
+.user-card button {
+  background-color: #00796b;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  margin-top: 20px;
+}
+
+.user-card button:hover {
+  background-color: #004d40;
+  transform: scale(1.1);
+}
+
+/* Responsive design for small screens */
+@media (max-width: 600px) {
+  .user-card {
+    width: 90%;
+  }
+}
+
+/* Responsive styling */
+@media (max-width: 768px) {
+  .container {
+    padding: 15px;
+  }
+
+  form {
+    width: 100%;
+  }
+
+  label {
+    font-size: 1em;
+  }
+
+  input[type="text"], input[type="email"], input[type="number"], button[type="submit"] {
+    font-size: 1em;
+  }
+
+  .user-card {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .user-card .user-info {
+    margin-bottom: 10px;
+  }
+
+  .user-card .user-actions {
+    width: 100%;
+    justify-content: space-between;
+  }
+}
+.cancel {
+  background-color: red;         /* Red background */
+  color: white;                  /* White text color */
+  border: none;                  /* No border */
+  padding: 10px 20px;            /* Padding for better spacing */
+  font-size: 16px;               /* Font size for readability */
+  font-weight: bold;             /* Bold text */
+  cursor: pointer;               /* Pointer cursor on hover */
+  border-radius: 5px;            /* Rounded corners */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+  transition: 
+    transform 0.3s ease, 
+    background-color 0.3s ease, 
+    box-shadow 0.3s ease;        /* Smooth transitions */
+}
+
+.cancel:hover {
+  background-color: darkred;     /* Darker red on hover */
+  transform: translateY(-5px) scale(1.1) rotate(-1deg); /* Lift, enlarge, slight rotation */
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3); /* Enhanced shadow for hover */
+}
+
+.cancel:active {
+  transform: translateY(2px) scale(0.95);  /* Slight press-in effect on click */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Reduced shadow when active */
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  }
+  50% {
+    transform: scale(1.05);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  }
+}
+
+.cancel.danger {
+  animation: pulse 0.8s infinite; /* Subtle pulsing effect to attract attention */
+}
+
+@keyframes shake {
+  0% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  50% { transform: translateX(5px); }
+  75% { transform: translateX(-5px); }
+  100% { transform: translateX(0); }
+}
+
+.cancel.warning {
+  animation: shake 0.5s ease-in-out; /* Shake animation for a warning */
+}
+
+.cancel:focus {
+  outline: none;                /* Remove default outline */
+  box-shadow: 0 0 10px rgba(255, 0, 0, 0.7); /* Glow effect on focus */
+}
+
+.cancel:disabled {
+  background-color: #cccccc;    /* Greyed out for disabled state */
+  color: #666666;               /* Muted text color */
+  cursor: not-allowed;          /* Disabled cursor */
+  box-shadow: none;             /* Remove shadow */
+}

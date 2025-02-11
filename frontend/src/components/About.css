@@ -1,0 +1,334 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    background-color: #f4f7fc;
+    color: #333;
+  }
+  
+  h1, h2, h3 {
+    font-family: 'Segoe UI', sans-serif;
+  }
+  
+  ul {
+    list-style-type: none;
+  }
+  
+  a {
+    text-decoration: none;
+  }
+  
+  header {
+    background: #005d2f;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    border-bottom: 5px solid #008c4a;
+  }
+  
+  header h1 {
+    font-size: 36px;
+    margin-bottom: 10px;
+  }
+  
+  header p {
+    font-size: 18px;
+    margin-top: 0;
+  }
+  
+  section {
+    padding: 40px 20px;
+    max-width: 1100px;
+    margin: 0 auto;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+  }
+  
+  h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #005d2f;
+  }
+  
+  h3 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  p, ul {
+    font-size: 16px;
+    color: #555;
+  }
+  
+  ul li {
+    margin-bottom: 10px;
+  }
+  
+  footer {
+    background: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px 20px;
+  }
+  
+  footer p {
+    font-size: 14px;
+  }
+  
+  .stakeholder ul li {
+    font-size: 16px;
+    margin-bottom: 8px;
+  }
+  
+  /* Core Values Section */
+  .core-values {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  
+  .value-item {
+    background: #e9f4f1;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 23%;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  
+  .value-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  }
+  
+  .value-item h3 {
+    font-size: 22px;
+    margin-bottom: 10px;
+    color: #007f4d;
+  }
+  
+  .value-item p {
+    font-size: 16px;
+    color: #333;
+  }
+  
+  /* Key Solutions Section */
+  .key-solutions .solution-item {
+    margin-bottom: 20px;
+  }
+  
+  .key-solutions .solution-item h3 {
+    font-size: 22px;
+    color: #005d2f;
+    transition: color 0.3s;
+  }
+  
+  .key-solutions .solution-item h3:hover {
+    color: #007f4d;
+  }
+  
+  .key-solutions .solution-item p {
+    font-size: 16px;
+    color: #555;
+    transition: color 0.3s;
+  }
+  
+  .key-solutions .solution-item:hover p {
+    color: #333;
+  }
+  
+  /* Stakeholder Benefits */
+  .stakeholder {
+    background: #f1f7f3;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    transition: transform 0.3s;
+  }
+  
+  .stakeholder:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  }
+  
+  .stakeholder h3 {
+    font-size: 22px;
+    color: #005d2f;
+  }
+  
+  .stakeholder ul li {
+    font-size: 16px;
+    color: #555;
+  }
+  
+  /* Mission & Vision */
+  .mission, .vision {
+    background-color: #d8f3dc;
+    border-left: 5px solid #004d2d;
+  }
+  
+  .mission h2, .vision h2 {
+    color: #004d2d;
+  }
+  
+  /* Hover and Animation Effects */
+  .stakeholder ul li:hover {
+    color: #008c4a;
+    cursor: pointer;
+    transition: color 0.3s ease-in-out;
+  }
+  
+  .solution-item:hover {
+    cursor: pointer;
+    background-color: #f0f8f0;
+  }
+  
+  section:hover {
+    transform: scale(1.02);
+    transition: transform 0.3s ease;
+  }
+  
+  /* Scrollbar Styling */
+  body::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  body::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 5px;
+  }
+  
+  body::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
+  
+  /* Mobile & Tablet Responsive Design */
+  @media screen and (max-width: 768px) {
+    .core-values {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .value-item {
+      width: 90%;
+      margin-bottom: 20px;
+    }
+  
+    header {
+      text-align: left;
+      padding: 20px;
+    }
+  
+    footer {
+      padding: 15px;
+    }
+  
+    .stakeholder ul li {
+      font-size: 14px;
+    }
+  }
+  
+  @media screen and (max-width: 480px) {
+    .key-solutions .solution-item {
+      padding: 15px;
+      width: 100%;
+    }
+  
+    .mission, .vision {
+      padding: 30px 15px;
+    }
+  
+    footer {
+      font-size: 12px;
+    }
+  }
+  
+  /* Scroll Animations */
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  section {
+    animation: fadeIn 1s ease-out;
+  }
+  
+  /* Button Styles */
+  button {
+    background-color: #007f4d;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: #005d2f;
+  }
+  
+  /* Modal Styles for Interactivity (example) */
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+    animation: fadeIn 0.5s;
+  }
+  
+  .modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 600px;
+    border-radius: 10px;
+  }
+  
+  .modal-header {
+    font-size: 22px;
+    color: #333;
+  }
+  
+  .close {
+    color: #aaa;
+    font-size: 28px;
+    font-weight: bold;
+    position: absolute;
+    top: 5px;
+    right: 15px;
+    transition: color 0.3s;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  

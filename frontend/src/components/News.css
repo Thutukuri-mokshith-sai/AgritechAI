@@ -1,0 +1,252 @@
+/* Global styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f6f6;
+    color: #2c3e50;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+  }
+  
+  h1, h2 {
+    margin-bottom: 20px;
+    font-weight: bold;
+  }
+  
+  /* Header Styles */
+  h1 {
+    font-size: 36px;
+    text-align: center;
+    color: #2980b9;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    padding-top: 40px;
+    padding-bottom: 20px;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Article Styles */
+  .article {
+    background-color: white;
+    border-radius: 8px;
+    margin-bottom: 40px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    padding: 25px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .article:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  }
+  
+  .article h2 {
+    font-size: 28px;
+    color: #34495e;
+    border-bottom: 3px solid #16a085;
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+  }
+  
+  .article .date {
+    font-style: italic;
+    color: #7f8c8d;
+    font-size: 16px;
+    margin-bottom: 15px;
+  }
+  
+  .article .source {
+    color: #16a085;
+    font-weight: bold;
+    font-size: 14px;
+    margin-top: 10px;
+  }
+  
+  /* Paragraph styles */
+  .article p {
+    font-size: 18px;
+    color: #34495e;
+    line-height: 1.8;
+    margin-bottom: 15px;
+  }
+  
+  .article p:last-child {
+    margin-bottom: 0;
+  }
+  
+  /* Container */
+  .container {
+    width: 80%;
+    margin: 0 auto;
+  }
+  
+  /* Link Styles */
+  a {
+    text-decoration: none;
+    color: #2980b9;
+    transition: color 0.3s ease;
+  }
+  
+  a:hover {
+    color: #16a085;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 1200px) {
+    .container {
+      width: 90%;
+    }
+  
+    h1 {
+      font-size: 32px;
+    }
+  
+    h2 {
+      font-size: 24px;
+    }
+  
+    .article p {
+      font-size: 16px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .container {
+      width: 95%;
+    }
+  
+    h1 {
+      font-size: 28px;
+    }
+  
+    h2 {
+      font-size: 22px;
+    }
+  
+    .article {
+      padding: 20px;
+    }
+  
+    .article .date {
+      font-size: 14px;
+    }
+  
+    .article .source {
+      font-size: 12px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    h1 {
+      font-size: 24px;
+    }
+  
+    .article p {
+      font-size: 14px;
+    }
+  }
+  
+  /* Cards with hover effects */
+  .article {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .article:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Button Styling */
+  .btn {
+    display: inline-block;
+    padding: 12px 30px;
+    background-color: #16a085;
+    color: white;
+    font-size: 16px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-radius: 5px;
+    text-align: center;
+    transition: background-color 0.3s ease;
+  }
+  
+  .btn:hover {
+    background-color: #1abc9c;
+  }
+  
+  .btn-primary {
+    background-color: #2980b9;
+  }
+  
+  .btn-primary:hover {
+    background-color: #3498db;
+  }
+  
+  .btn-secondary {
+    background-color: #e74c3c;
+  }
+  
+  .btn-secondary:hover {
+    background-color: #c0392b;
+  }
+  
+  /* Alert Box Styling */
+  .alert {
+    padding: 15px;
+    background-color: #f39c12;
+    color: white;
+    margin-bottom: 20px;
+    border-radius: 5px;
+  }
+  
+  .alert.success {
+    background-color: #27ae60;
+  }
+  
+  .alert.error {
+    background-color: #e74c3c;
+  }
+  
+  /* Custom Scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background-color: #2980b9;
+    border-radius: 10px;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: #3498db;
+  }
+  
+  /* Flexbox Layout for Multi-Column */
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  
+  .col {
+    flex: 1;
+    min-width: 250px;
+  }
+  
+  @media (max-width: 1200px) {
+    .row {
+      flex-direction: column;
+    }
+  }
+  

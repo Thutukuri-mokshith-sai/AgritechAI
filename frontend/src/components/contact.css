@@ -1,0 +1,309 @@
+/* General Layout */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f0f0f5;
+    color: #333;
+    line-height: 1.6;
+    width: 100%;
+  }
+  
+  div {
+    width: 100%;
+    margin: 0 auto;
+  }
+  
+  /* Header Section */
+  header {
+    background: linear-gradient(45deg, #4CAF50, #81C784);
+    color: white;
+    padding: 40px 0;
+    text-align: center;
+    border-bottom: 5px solid #388E3C;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  }
+  
+  header h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    animation: fadeIn 1.2s ease-in-out;
+  }
+  
+  header p {
+    font-size: 1.4rem;
+    margin-top: 15px;
+  }
+  
+  /* About Section */
+  .about {
+    padding: 60px 0;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  }
+  
+  h2 {
+    font-size: 2.4rem;
+    text-align: center;
+    margin-bottom: 25px;
+    color: #333;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    animation: fadeIn 1s ease-out;
+  }
+  
+  /* Team Section Styling */
+  .team-member {
+    background-color: #fff;
+    margin-bottom: 30px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    animation: fadeInUp 0.6s ease-out;
+  }
+  
+  .team-member:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  }
+  
+  .team-member h3 {
+    font-size: 1.8rem;
+    color: #4CAF50;
+    text-transform: capitalize;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .team-member p {
+    font-size: 1.1rem;
+    color: #555;
+    margin-bottom: 5px;
+  }
+  
+  .team-member a {
+    color: #1a73e8;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+  }
+  
+  .team-member a:hover {
+    color: #388E3C;
+    text-decoration: underline;
+  }
+  
+  /* Team Leader Highlight */
+  .team-leader {
+    border: 3px solid #FFD700;
+    background-color: #FFF8E1;
+    animation: glowing 1.5s infinite alternate;
+  }
+  
+  .team-leader h3 {
+    color: #FFD700;
+    font-size: 1.9rem;
+    text-transform: uppercase;
+    font-weight: 600;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+  }
+  
+  .team-leader p {
+    font-size: 1.1rem;
+    color: #333;
+  }
+  
+  .team-leader a {
+    color: #1a73e8;
+  }
+  
+  /* Animations */
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  
+  @keyframes fadeInUp {
+    0% {
+      transform: translateY(20px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  @keyframes glowing {
+    0% {
+      box-shadow: 0 0 5px #FFD700;
+    }
+    100% {
+      box-shadow: 0 0 20px #FFD700;
+    }
+  }
+  
+  @keyframes slideIn {
+    0% {
+      transform: translateX(-100%);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+  
+  /* Contact Form */
+  .contact-form {
+    background-color: #fff;
+    padding: 40px;
+    margin-top: 50px;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+  }
+  
+  .contact-form h2 {
+    font-size: 2.5rem;
+    color: #4CAF50;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .contact-form label {
+    font-size: 1.3rem;
+    display: block;
+    margin-bottom: 10px;
+    color: #333;
+  }
+  
+  .contact-form input,
+  .contact-form textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    font-size: 1.2rem;
+    color: #333;
+    transition: border-color 0.3s ease;
+  }
+  
+  .contact-form input:focus,
+  .contact-form textarea:focus {
+    border-color: #4CAF50;
+  }
+  
+  .contact-form button {
+    width: 100%;
+    padding: 15px;
+    background-color: #4CAF50;
+    color: white;
+    font-size: 1.3rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+  
+  .contact-form button:hover {
+    background-color: #388E3C;
+    transform: translateY(-2px);
+  }
+  
+  .contact-form button:active {
+    transform: translateY(2px);
+  }
+  
+  /* Footer Section */
+  footer {
+    background-color: #333;
+    color: white;
+    padding: 15px;
+    text-align: center;
+    margin-top: 40px;
+    border-top: 3px solid #4CAF50;
+  }
+  
+  footer p {
+    font-size: 1rem;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    div {
+      width: 95%;
+    }
+  
+    .team-member {
+      margin-bottom: 20px;
+      padding: 15px;
+    }
+  
+    .contact-form input,
+    .contact-form textarea {
+      padding: 10px;
+    }
+  
+    .contact-form button {
+      padding: 12px;
+    }
+  
+    header h1 {
+      font-size: 2.5rem;
+    }
+  
+    header p {
+      font-size: 1.2rem;
+    }
+  
+    .about h2 {
+      font-size: 2rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    header h1 {
+      font-size: 2rem;
+    }
+  
+    header p {
+      font-size: 1rem;
+    }
+  
+    .team-member h3 {
+      font-size: 1.5rem;
+    }
+  
+    .team-member p {
+      font-size: 1rem;
+    }
+  
+    .contact-form h2 {
+      font-size: 2rem;
+    }
+  
+    .contact-form label {
+      font-size: 1.2rem;
+    }
+  
+    .contact-form input,
+    .contact-form textarea {
+      font-size: 1rem;
+    }
+  
+    .contact-form button {
+      font-size: 1.2rem;
+    }
+  }
+  

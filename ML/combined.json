@@ -1,0 +1,88 @@
+{
+    "Bajra (Pearl Millet/Cumbu)": {
+      "Uttar Pradesh": {
+        "Auraiya":[
+            "Achalda",
+            "Dibiapur"
+        ],
+         "Agra":[
+            "Achnera",
+            "Agra",
+            "Fatehabad",
+            "Fatehpur Sikri",
+            "Jagnair",
+            "Khairagarh",
+            "Samsabad"
+         ],
+          "Etah":[
+            "Aliganj",
+            "Etah",
+            "Awagarh"
+          ],
+           "Aligarh":[
+            "Aligarh",
+            "Atrauli",
+            "Charra",
+            "Khair"
+           ],
+            "Bulandshahar", "Mainpuri", "Bareilly", "Badaun", "Kanpur", "Fatehpur", "Sambhal", "Gonda", "Hathras", "Kasganj", "Mathura", "Farukhabad", "Sikar", "Firozabad", "Prayagraj", "Raebareli", "Sonbhadra", "Shivpuri", "Jhansi", "Deoria", "Meerut"
+      },
+      "Haryana": [
+        "Hissar", "Faridabad", "Bhiwani", "Jhajar", "Sirsa", "Fatehabad", "Panchkula", "Kurukshetra"
+      ],
+      "Maharashtra": [
+        "Ahmednagar", "Akola", "Jalgaon", "Amarawati", "Jalana", "Sholapur", "Beed", "Aurangabad", "Nashik", "Yavatmal", "Raigad", "Pune", "Satara"
+      ],
+      "Telangana": [
+        "Mahbubnagar", "Warangal", "Nizamabad", "Khammam", "Medak"
+      ],
+      "Rajasthan": [
+        "Alirajpur", "Alwar", "Jaipur Rural", "Jalore", "Bhilwara", "Bikaner", "Churu", "Barmer", "Dausa", "Jodhpur", "Bundi", "Mahoba", "Baran", "Ganganagar", "Nagaur", "Jaipur", "Sikar", "Chhatarpur", "Sheopur"
+      ],
+      "Gujarat": [
+        "Banaskanth", "Amreli", "Anand", "Sabarkantha", "Bhavnagar", "Surendranagar", "Rajkot", "Jamnagar", "Gandhinagar", "Kheda", "Mehsana", "Patan"
+      ],
+      "Karnataka": [
+        "Bagalkot", "Bangalore", "Bijapur", "Chitradurga", "Gadag", "Bellary", "Koppal", "Mandya", "Raichur", "Hassan"
+      ],
+      "Tamil Nadu": [
+        "Ariyalur", "Theni", "Villupuram", "Coimbatore", "Dindigul", "Tiruchirappalli", "Chennai", "Salem", "Vellore", "Karur"
+      ],
+      "Madhya Pradesh": [
+        "Bhind", "Gwalior", "Mandla", "Katni", "Pali", "Betul", "Ashoknagar", "Dindori", "Chhindwara"
+      ],
+      "Andhra Pradesh": [
+        "Kurnool", "Chittoor", "West Godavari", "Krishna", "Nellore"
+      ]
+    },
+    "Barley (Jau)": {
+      "Uttar Pradesh": [
+        "Agra", "Aligarh", "Prayagraj", "Azamgarh", "Ballia", "Dausa", "Panna", "Rewa", "Sambhal", "Badaun", "Kanpur", "Tonk", "Bundi", "Mahoba", "Jodhpur", "Pratapgarh", "Firozabad", "Satna", "Kotputli- Behror", "Firozabad", "Ghaziabad", "Jhansi", "Mathura", "Muzaffarnagar", "Delhi", "Saharanpur", "Etah", "Deeg", "Datia", "Datia", "Jalaun (Orai)"
+      ],
+      "Haryana": [
+        "Hissar", "Karnal", "Fatehabad", "Jind", "Sonipat", "Chandigarh", "Ambala", "Panchkula"
+      ],
+      "Rajasthan": [
+        "Chhatarpur", "Jaipur Rural", "Churu", "Sikar", "Udaipur", "Bikaner", "Jhunjhunu", "Baran", "Nagaur", "Ajmer", "Alwar", "Swai Madhopur"
+      ],
+      "Maharashtra": [
+        "Ahmednagar", "Shivpuri", "Nashik", "Raigad", "Pune", "Mumbai", "Nagpur", "Satara"
+      ],
+      "Gujarat": [
+        "Gandhinagar", "Sabarkantha", "Rajkot", "Surat", "Patan", "Vadodara"
+      ],
+      "Madhya Pradesh": [
+        "Sheopur", "Sagar", "Rewa", "Sehore", "Indore", "Shivpuri", "Chhatarpur", "Ujjain", "Bhopal", "Guna", "Satna", "Betul"
+      ],
+      "Karnataka": [
+        "Gadag", "Bellary", "Raichur", "Hassan", "Bagalkot"
+      ],
+      "Uttarakhand": [
+        "Haridwar", "Dehradun", "Nainital"
+      ],
+      "Punjab": [
+        "Patiala", "Fatehgarh Sahib", "Ludhiana"
+      ]
+    }
+  }
+  

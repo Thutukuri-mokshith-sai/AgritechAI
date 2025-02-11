@@ -1,0 +1,396 @@
+/* Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f9;
+  color: #333;
+}
+
+/* Title and Description */
+.weather-title {
+  font-size: 36px;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 30px;
+  color: #4a90e2;
+}
+
+.weather-description {
+  text-align: center;
+  font-size: 16px;
+  color: #888;
+  margin-top: 10px;
+}
+
+/* Weather Data Section */
+.weather-data {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.weather-entry {
+  background-color: #fff;
+  padding: 15px;
+  margin: 10px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 300px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.weather-entry:hover {
+  transform: translateY(-10px);
+}
+
+.weather-time {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.weather-condition, .weather-humidity, .weather-precipitation, .weather-wind-speed {
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+
+/* Weather Summary */
+.weather-summary-container {
+  display: flex;
+  justify-content: center;
+  margin: 30px 0;
+}
+
+.weather-summary {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 50%;
+  text-align: center;
+}
+
+.weather-summary h3 {
+  font-size: 24px;
+  color: #4a90e2;
+  margin-bottom: 20px;
+}
+
+.summary-temperature, .summary-precipitation, .summary-wind-speed, .summary-humidity {
+  font-size: 18px;
+  margin: 5px 0;
+}
+
+/* Weather Visualizations */
+.weather-visualizations {
+  text-align: center;
+  margin: 40px 0;
+}
+
+.chart-container {
+  margin: 20px 0;
+}
+
+/* Weather Map */
+.weather-map-container {
+  margin: 40px 0;
+  text-align: center;
+}
+
+.weather-map-container h3 {
+  font-size: 24px;
+  color: #4a90e2;
+  margin-bottom: 20px;
+}
+
+/* Map Styling */
+.leaflet-container {
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .weather-entry {
+      width: 90%;
+  }
+
+  .weather-summary {
+      width: 90%;
+  }
+}
+
+@media (max-width: 480px) {
+  .weather-title {
+      font-size: 28px;
+  }
+
+  .weather-entry {
+      width: 100%;
+  }
+
+  .weather-summary {
+      width: 100%;
+  }
+
+  .chart-container {
+      width: 100%;
+      margin: 10px 0;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #888;
+  border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #555;
+}
+
+/* Button Styling */
+button {
+  background-color: #4a90e2;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+button:hover {
+  background-color: #357ab7;
+}
+
+/* Input Fields */
+input[type="text"], input[type="number"], input[type="email"], textarea {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  background-color: #f9f9f9;
+}
+
+input[type="text"]:focus, input[type="number"]:focus, input[type="email"]:focus, textarea:focus {
+  outline: none;
+  border-color: #4a90e2;
+  background-color: #fff;
+}
+
+/* Header Styling */
+.header {
+  background-color: #4a90e2;
+  color: white;
+  padding: 15px;
+  text-align: center;
+}
+
+.header h1 {
+  font-size: 36px;
+  font-weight: bold;
+}
+
+/* Footer Styling */
+.footer {
+  background-color: #333;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+.footer p {
+  font-size: 14px;
+}
+
+/* Card Component */
+.card {
+  background-color: #fff;
+  padding: 15px;
+  margin: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.card h3 {
+  font-size: 24px;
+  color: #4a90e2;
+}
+
+.card p {
+  font-size: 16px;
+  color: #888;
+}
+
+/* Modal Styling */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.4);
+  padding-top: 60px;
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 5% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  border-radius: 10px;
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  background-color: #4a90e2;
+  padding: 10px 20px;
+  color: white;
+}
+
+.navbar .nav-links {
+  list-style-type: none;
+  display: flex;
+}
+
+.navbar .nav-links li {
+  margin: 0 15px;
+  font-size: 18px;
+}
+
+.navbar .nav-links a {
+  text-decoration: none;
+  color: white;
+  transition: color 0.3s ease;
+}
+
+.navbar .nav-links a:hover {
+  color: #357ab7;
+}
+
+/* Sidebar */
+.sidebar {
+  height: 100%;
+  width: 250px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #333;
+  padding-top: 20px;
+  display: none;
+}
+
+.sidebar a {
+  padding: 8px 8px 8px 16px;
+  text-decoration: none;
+  font-size: 18px;
+  color: #818181;
+  display: block;
+  transition: color 0.3s ease;
+}
+
+.sidebar a:hover {
+  color: white;
+}
+
+/* Active Sidebar */
+.sidebar.active {
+  display: block;
+}
+
+.sidebar-btn {
+  font-size: 22px;
+  background-color: #4a90e2;
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Table Styles */
+.weather-table {
+  width: 100%;
+  margin-top: 20px;
+  border-collapse: collapse;
+}
+
+.weather-table th, .weather-table td {
+  padding: 12px 15px;
+  border: 1px solid #ddd;
+  text-align: left;
+}
+
+.weather-table th {
+  background-color: #4a90e2;
+  color: white;
+}
+
+.weather-table tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.weather-table tr:hover {
+  background-color: #ddd;
+}
+
+/* Tooltip */
+.tooltip {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: #6c757d;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%; /* Position above */
+  left: 50%;
+  margin-left: -60px;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}

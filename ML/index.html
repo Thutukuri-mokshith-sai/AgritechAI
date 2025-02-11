@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Commodity Price Prediction</title>
+  <link rel="stylesheet" href="Drop.css">
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <style>
+    .main-container {
+      width: 80%;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #f9f9f9;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .header {
+      text-align: center;
+      font-size: 2em;
+      color: #333;
+      margin-bottom: 20px;
+    }
+
+    .form-container {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .label {
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+
+    .select-input, .date-input {
+      padding: 8px;
+      font-size: 1rem;
+      border-radius: 5px;
+      border: 1px solid #ddd;
+    }
+
+    .submit-button {
+      padding: 10px;
+      font-size: 1.2rem;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+
+    .submit-button:hover {
+      background-color: #45a049;
+    }
+
+    .error-message {
+      color: red;
+      font-size: 1.1em;
+      text-align: center;
+      margin-top: 15px;
+    }
+
+    .filter-date-container {
+      margin-top: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .filter-label {
+      font-size: 1.1em;
+      margin-right: 10px;
+    }
+
+    .filter-date-input {
+      padding: 8px;
+      font-size: 1rem;
+      border-radius: 5px;
+      border: 1px solid #ddd;
+    }
+
+    .clear-filter-button {
+      padding: 8px 15px;
+      background-color: #f44336;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .clear-filter-button:hover {
+      background-color: #e53935;
+    }
+
+    .predictions-container {
+      margin-top: 20px;
+    }
+
+    .prediction-item {
+      background-color: #e8f5e9;
+      padding: 15px;
+      margin-bottom: 15px;
+      border-radius: 5px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .prediction-date,
+    .prediction-min,
+    .prediction-max,
+    .prediction-modal {
+      margin: 5px 0;
+    }
+
+    .prediction-separator {
+      border-top: 1px solid #ddd;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="main-container">
+    <h1 class="header">Commodity Price Prediction</h1>
+    <form id="prediction-form" class="form-container">
+      <div class="form-group">
+        <label class="label">Commodity: </label>
+        <select id="commodity" class="select-input">
+          <option value="">Select a commodity</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label class="label">State: </label>
+        <select id="state" class="select-input" disabled>
+          <option value="">Select a state</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label class="label">District: </label>
+        <select id="district" class="select-input" disabled>
+          <option value="">Select a district</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label class="label">Market Name: </label>
+        <select id="marketName" class="select-input" disabled>
+          <option value="">Select a market</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label class="label">Start Date: </label>
+        <input id="startDate" class="date-input" type="date">
+      </div>
+      <div class="form-group">
+        <label class="label">End Date: </label>
+        <input id="endDate" class="date-input" type="date">
+      </div>
+      <button type="submit" class="submit-button">Predict</button>
+    </form>
+
+    <div id="error-message" class="error-message"></div>
+    <div class="filter-date-container">
+        <label class="filter-label">Filter Predictions by Date: </label>
+        <input id="filterDate" class="filter-date-input" type="date">
+        <button id="clearFilterButton" class="clear-filter-button">Clear Filter</button>
+    </div>
+      
+    <div id="predictions-container" class="predictions-container"></div>
+  </div>
+
+  <script>
+    // The script stays the same as you provided earlier.
+    const data = {
+      "Bajra(Pearl Millet/Cumbu)": {
+        "Uttar Pradesh": {
+          "Agra": ["Achnera", "Fatehpur Sikri", "Khairagarh"],
+          "Aligarh": ["Atrauli", "Khair"]
+        },
+        "Rajasthan": {
+          "Jaipur": ["Kishangarh", "Sanganer"],
+          "Jodhpur": ["Pali", "Bilara"]
+        }
+      },
+      "Wheat": {
+        "Madhya Pradesh": {
+          "Indore": ["Mhow", "Dewas"],
+          "Bhopal": ["Sehore", "Hoshangabad"]
+        },
+        "Punjab": {
+          "Ludhiana": ["Khanna", "Doraha"],
+          "Amritsar": ["Majitha", "Rajasansi"]
+        }
+      }
+    };
+
+    const commoditySelect = document.getElementById("commodity");
+    const stateSelect = document.getElementById("state");
+    const districtSelect = document.getElementById("district");
+    const marketNameSelect = document.getElementById("marketName");
+    const startDateInput = document.getElementById("startDate");
+    const endDateInput = document.getElementById("endDate");
+    const filterDateInput = document.getElementById("filterDate");
+    const errorMessage = document.getElementById("error-message");
+    const predictionsContainer = document.getElementById("predictions-container");
+    const filterButton = document.getElementById("filterButton");
+
+    // Populate commodities
+    Object.keys(data).forEach(commodity => {
+      const option = document.createElement("option");
+      option.value = commodity;
+      option.textContent = commodity;
+      commoditySelect.appendChild(option);
+    });
+
+    commoditySelect.addEventListener("change", () => {
+      const selectedCommodity = commoditySelect.value;
+      stateSelect.disabled = !selectedCommodity;
+      stateSelect.innerHTML = '<option value="">Select a state</option>';
+
+      if (selectedCommodity) {
+        Object.keys(data[selectedCommodity]).forEach(state => {
+          const option = document.createElement("option");
+          option.value = state;
+          option.textContent = state;
+          stateSelect.appendChild(option);
+        });
+      }
+
+      districtSelect.disabled = true;
+      districtSelect.innerHTML = '<option value="">Select a district</option>';
+      marketNameSelect.disabled = true;
+      marketNameSelect.innerHTML = '<option value="">Select a market</option>';
+    });
+
+    stateSelect.addEventListener("change", () => {
+      const selectedState = stateSelect.value;
+      districtSelect.disabled = !selectedState;
+      districtSelect.innerHTML = '<option value="">Select a district</option>';
+
+      if (selectedState) {
+        const commodity = commoditySelect.value;
+        Object.keys(data[commodity][selectedState]).forEach(district => {
+          const option = document.createElement("option");
+          option.value = district;
+          option.textContent = district;
+          districtSelect.appendChild(option);
+        });
+      }
+
+      marketNameSelect.disabled = true;
+      marketNameSelect.innerHTML = '<option value="">Select a market</option>';
+    });
+
+    districtSelect.addEventListener("change", () => {
+      const selectedDistrict = districtSelect.value;
+      marketNameSelect.disabled = !selectedDistrict;
+      marketNameSelect.innerHTML = '<option value="">Select a market</option>';
+
+      if (selectedDistrict) {
+        const commodity = commoditySelect.value;
+        const state = stateSelect.value;
+        data[commodity][state][selectedDistrict].forEach(market => {
+          const option = document.createElement("option");
+          option.value = market;
+          option.textContent = market;
+          marketNameSelect.appendChild(option);
+        });
+      }
+    });
+
+    document.getElementById("prediction-form").addEventListener("submit", async (e) => {
+      e.preventDefault();
+      errorMessage.textContent = "";
+      predictionsContainer.innerHTML = "";
+
+      const commodity = commoditySelect.value;
+      const state = stateSelect.value;
+      const district = districtSelect.value;
+      const marketName = marketNameSelect.value;
+      const startDate = startDateInput.value;
+      const endDate = endDateInput.value;
+
+      if (!commodity || !state || !district || !marketName || !startDate || !endDate) {
+        errorMessage.textContent = "All fields are required.";
+        return;
+      }
+
+      const start = new Date(startDate);
+      const end = new Date(endDate);
+      if (start > end) {
+        errorMessage.textContent = "Start date must be before end date.";
+        return;
+      }
+
+      const inputs = {
+        commodity,
+        district,
+        market_name: marketName,
+        start_date: startDate,
+        end_date: endDate
+      };
+
+      try {
+        const response = await axios.post("http://localhost:5000/predict", inputs);
+        const predictions = response.data;
+
+        predictions.forEach((prediction) => {
+          const predictionDiv = document.createElement("div");
+          predictionDiv.classList.add("prediction-item");
+          predictionDiv.innerHTML = `
+            <p class="prediction-date">Date: ${prediction.Date}</p>
+            <p class="prediction-min">Min Price: ${prediction["Min Price"]}</p>
+            <p class="prediction-max">Max Price: ${prediction["Max Price"]}</p>
+            <p class="prediction-modal">Modal Price: ${prediction["Modal Price"]}</p>
+            <hr class="prediction-separator">
+          `;
+          predictionsContainer.appendChild(predictionDiv);
+        });
+      } catch (err) {
+        errorMessage.textContent = err.response?.data?.message || "Error: Could not fetch predictions.";
+        console.error("Error details:", err);
+      }
+    });
+
+    filterButton.addEventListener("click", () => {
+      const selectedDate = filterDateInput.value;
+      if (!selectedDate) return;
+
+      const predictionItems = document.querySelectorAll(".prediction-item");
+      predictionItems.forEach((item) => {
+        const predictionDate = item.querySelector(".prediction-date").textContent;
+        const predictionDateFormatted = predictionDate.replace("Date: ", "");
+        if (predictionDateFormatted !== selectedDate) {
+          item.style.display = "none";
+        } else {
+          item.style.display = "block";
+        }
+      });
+    });
+    const clearFilterButton = document.getElementById("clearFilterButton");
+
+clearFilterButton.addEventListener("click", () => {
+  // Clear the filter date input
+  filterDateInput.value = "";
+
+  // Clear any displayed predictions
+  predictionsContainer.innerHTML = "";
+
+  // Optionally, re-enable other inputs if needed
+  commoditySelect.disabled = false;
+  stateSelect.disabled = false;
+  districtSelect.disabled = false;
+  marketNameSelect.disabled = false;
+
+  // Optionally, clear the form selection values
+  commoditySelect.value = "";
+  stateSelect.value = "";
+  districtSelect.value = "";
+  marketNameSelect.value = "";
+  startDateInput.value = "";
+  endDateInput.value = "";
+});
+
+  </script>
+</body>
+</html>
